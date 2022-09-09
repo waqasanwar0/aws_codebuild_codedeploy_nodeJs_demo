@@ -3,6 +3,7 @@ pipeline{
     stages {
         stage('source'){
             steps{
+		checkout([$class: 'GitSCM', branches: [[name: '*/Deployment']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo.git']]])
 		sh 'cat index.js'
             }
         }
@@ -11,7 +12,7 @@ pipeline{
                 sshagent(credentials :['52.87.233.180']){
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-52-87-233-180.compute-1.amazonaws.com uptime'
                     sh 'ssh -v ubuntu@ec2-52-87-233-180.compute-1.amazonaws.com'
-		    sh 'sudo mkdir /home/ubuntu/waqas'
+		    sh 'ls'
                 }
             }
         }
