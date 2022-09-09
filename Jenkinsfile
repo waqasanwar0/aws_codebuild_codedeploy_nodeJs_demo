@@ -10,7 +10,7 @@ pipeline{
             steps{
                 sshagent(['52.87.233.180']){
                     sh '''
-                        ssh -o StricHostKeyChecking=no ubuntu@ec2-52-87-233-180.compute-1.amazonaws.com ls
+                        ssh -o ubuntu@ec2-52-87-233-180.compute-1.amazonaws.com
                     '''
                 }
             }
