@@ -12,7 +12,7 @@ pipeline{
                 sshagent(credentials :['52.87.233.180']){
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-52-87-233-180.compute-1.amazonaws.com uptime'
                     sh 'ssh -v ubuntu@ec2-52-87-233-180.compute-1.amazonaws.com'
-                    sh 'scp -r /var/lib/jenkins/workspace/DeploymentTest1 ubuntu@ec2-52-87-233-180.compute-1.amazonaws.com:/home/ubuntu'
+                    sh 'scp -r /var/lib/jenkins/workspace/DeploymentTest1 ubuntu@ec2-34-236-23-5.compute-1.amazonaws.com:/home/ubuntu'
                 }
             }
         }
